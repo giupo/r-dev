@@ -1,11 +1,10 @@
 FROM rocker/r-ver:3.5.3
-
-RUN apt-get -qq update && \
-      apt-get -yqq upgrade && \
-      apt-get -yqq install libxml2-dev \ 
+RUN apt-get update && \
+      apt-get -y upgrade && \
+      apt-get -y install libxml2-dev \ 
       libgit2-dev libcurl4-gnutls-dev \ 
       libssl-dev libpcre3-dev liblzma-dev \
-      libbz2-dev default-jdk
+      libbz2-dev default-jdk git openssh-client
 
 
 # install R deps
