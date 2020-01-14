@@ -6,9 +6,6 @@ RUN apt-get update && \
       libssl-dev libpcre3-dev liblzma-dev \
       libbz2-dev default-jdk git openssh-client
 
-
 # install R deps
 
-RUN R -e 'install.packages("pak", repos="https://cran.rstudio.com")'
-RUN R -e 'pak::pkg_install(c("pak", "devtools", "roxygen2", "testthat", "covr", "mockery", "usethis", "rstudio/renv"), upgrade=TRUE)'
-RUN R -e 'install.packages("rJava", repos="https://cran.rstudio.com")'
+RUN R -e 'install.packages(c("pak", "devtools", "roxygen2", "testthat", "covr", "mockery", "usethis", "renv", "rJava"), repos="https://cran.rstudio.com")'
